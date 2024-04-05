@@ -1,0 +1,20 @@
+# Use the following command:
+#
+#   docker compose up --build --remove-orphans -d
+#
+# to start the container.
+
+services:
+  wooniezie_stalker:
+    container_name: wooniezie_stalker
+    build: 
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - 'proxymesh'
+      - 'default'
+    tty: true
+
+networks:
+  proxymesh:
+    external: true
